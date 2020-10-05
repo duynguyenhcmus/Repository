@@ -11,5 +11,5 @@ import math
 diamonds_df['rounded_price']=diamonds_df['price'].apply(math.ceil)
 print(diamonds_df.head())
 diamonds_df = sns.load_dataset('diamonds')
-ax=sns.barplot(x="cut", y="price", hue='color', data=diamonds_df)
-plt.show()
+print("this will be explosive!")
+
