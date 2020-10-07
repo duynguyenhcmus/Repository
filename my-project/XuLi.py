@@ -49,3 +49,5 @@ states = ['Texas', 'Utah', 'California']
 obj = Series(np.arange(5.), index=['a', 'b', 'c', 'd', 'e'])
 new_obj = obj.drop('c')
 print(new_obj)
+data = DataFrame(np.arange(16).reshape((4, 4)),index=['Ohio', 'Colorado', 'Utah', 'New York'],columns=['one', 'two', 'three', 'four'])
+print(data.drop(['Colorado', 'Ohio']))
