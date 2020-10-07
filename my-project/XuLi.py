@@ -43,4 +43,9 @@ frame = DataFrame(np.arange(9).reshape((3, 3)), index=['a', 'c', 'd'],columns=['
 frame2 = frame.reindex(['a', 'b', 'c', 'd'])
 #print(frame2)
 states = ['Texas', 'Utah', 'California']
-print(frame.reindex(columns=states))
+#print(frame.reindex(columns=states))
+#print(frame.reindex(index=['a', 'b', 'c', 'd'], method='ffill',columns=states))
+#print(frame.iloc[[1, 2, 3, 4], states])
+obj = Series(np.arange(5.), index=['a', 'b', 'c', 'd', 'e'])
+new_obj = obj.drop('c')
+print(new_obj)
