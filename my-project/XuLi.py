@@ -48,6 +48,21 @@ states = ['Texas', 'Utah', 'California']
 #print(frame.iloc[[1, 2, 3, 4], states])
 obj = Series(np.arange(5.), index=['a', 'b', 'c', 'd', 'e'])
 new_obj = obj.drop('c')
-print(new_obj)
+#print(new_obj)
 data = DataFrame(np.arange(16).reshape((4, 4)),index=['Ohio', 'Colorado', 'Utah', 'New York'],columns=['one', 'two', 'three', 'four'])
-print(data.drop(['Colorado', 'Ohio']))
+#print(data.drop(['Colorado', 'Ohio']))
+"""
+from pandas_datareader import data,wb
+import pandas_datareader as web
+all_data = {}
+for ticker in ['AAPL', 'IBM', 'MSFT', 'GOOG']:
+	all_data[ticker] = web.get_data_yahoo(ticker, '1/1/2000', '1/1/2010')
+price = DataFrame({tic: data['Adj Close'] for tic, data in all_data.items()})
+volume = DataFrame({tic: data['Volume'] for tic, data in all_data.items()})
+returns = price.pct_change()
+print(returns.tail())
+"""
+obj = Series(range(4), index=['d', 'a', 'b', 'c'])
+print(obj.sort_index())
+frame = DataFrame(np.arange(8).reshape((2, 4)), index=['three', 'one'],columns=['d', 'a', 'b', 'c'])
+print(frame.sort_index())
